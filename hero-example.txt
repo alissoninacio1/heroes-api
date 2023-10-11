@@ -1,0 +1,7 @@
+    "name": "Iron Man",
+    "age": 34,
+    "planet": "Earth",
+    "gender": "Male",
+    "alien": false,
+    "tendency": "Good and Chaotic",
+    "editorial": "Marvel"
