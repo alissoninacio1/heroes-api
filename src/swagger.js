@@ -12,7 +12,7 @@ const doc = {
     title: 'Heroes API',
     description: 'API for managing heroes',
   },
-  // host: 'localhost:8080', 
+  // host: 'localhost:5000', 
   host: 'localhost:5000/heroes',
   basePath: '/',
 };

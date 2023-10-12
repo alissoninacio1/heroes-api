@@ -56,6 +56,49 @@ async function getHeroesById(id) {
     }
   }
   
+
+
+  async function updateHero(id, updatedHeroData) {
+    const {heroCollection} = await connectDB();
+    try {
+      const objectId = new ObjectId(id);
+      const result = await heroCollection.updateOne(
+          {_id: objectId},
+          {$set: updatedHeroData},
+      );
+  
+      if (result.modifiedCount > 0) {
+        return true;
+      } else {
+        return false;
+      }
+    } catch (err) {
+      console.error('Error updating hero:', err);
+      throw err;
+    } finally {
+      console.log('Disconnected from MongoDB');
+    }
+  }
+  
+  
+  async function deleteHero(id) {
+    const {heroesCollection} = await connectDB();
+    try {
+      const objectId = new ObjectId(id);
+      const result = await heroesCollection.deleteOne({_id: objectId});
+  
+      if (result.deletedCount > 0) {
+        return true;
+      } else {
+        return false;
+      }
+    } catch (err) {
+      console.error('Error deleting hero:', err);
+      throw err;
+    } finally {
+      console.log('Disconnected from MongoDB');
+    }
+  }
   
   
 
@@ -63,4 +106,6 @@ module.exports = {
     getHeroes,
     getHeroesById,
     createHeroes,
+    updateHero,
+    deleteHero
 };

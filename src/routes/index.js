@@ -4,6 +4,8 @@ const {
     processGetHero,
     processGetHeroById,
     processCreateHeroes,
+    processUpdateHero,
+    processDeleteHero,
 } = require('../controllers/processHeroes');
 
 
@@ -59,6 +61,57 @@ router.get('/:id', processGetHeroById);
  */
 router.post('/heroes', processCreateHeroes);
 
+
+
+/**
+ * @swagger
+ * /contacts/{id}:
+ *   put:
+ *     summary: Update a contact.
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         description: ID of the contact to update.
+ *         schema:
+ *           type: string
+ *       - in: body
+ *         name: body
+ *         description: Contact data to update.
+ *         required: true
+ *         schema:
+ *           $ref: '../models/models.js' 
+ *     responses:
+ *       204:
+ *         description: Contact updated successfully.
+ *       404:
+ *         description: Contact not found or not updated.
+ *       500:
+ *         description: Failed to update contact.
+ */
+router.put('/contacts/:id', processUpdateHero);
+
+/**
+ * @swagger
+ * /contacts/{id}:
+ *   delete:
+ *     summary: Delete a contact.
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         description: ID of the contact to delete.
+ *         schema:
+ *           type: string
+ *     responses:
+ *       200:
+ *         description: Contact deleted successfully.
+ *       404:
+ *         description: Contact not found or not deleted.
+ *       500:
+ *         description: Failed to delete contact.
+ */
+router.delete('/contacts/:id', processDeleteHero);
 
 
 
