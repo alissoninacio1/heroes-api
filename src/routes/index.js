@@ -65,53 +65,53 @@ router.post('/heroes', processCreateHeroes);
 
 /**
  * @swagger
- * /contacts/{id}:
+ * /heroes/{id}:
  *   put:
- *     summary: Update a contact.
+ *     summary: Update a hero.
  *     parameters:
  *       - in: path
  *         name: id
  *         required: true
- *         description: ID of the contact to update.
+ *         description: ID of the hero to update.
  *         schema:
  *           type: string
  *       - in: body
  *         name: body
- *         description: Contact data to update.
+ *         description: hero data to update.
  *         required: true
  *         schema:
  *           $ref: '../models/models.js' 
  *     responses:
  *       204:
- *         description: Contact updated successfully.
+ *         description: hero updated successfully.
  *       404:
- *         description: Contact not found or not updated.
+ *         description: hero not found or not updated.
  *       500:
- *         description: Failed to update contact.
+ *         description: Failed to update hero.
  */
-router.put('/contacts/:id', processUpdateHero);
+router.put('/heroes/:id', processUpdateHero);
 
 /**
  * @swagger
- * /contacts/{id}:
+ * /heroes/{id}:
  *   delete:
- *     summary: Delete a contact.
+ *     summary: Delete a hero.
  *     parameters:
  *       - in: path
  *         name: id
  *         required: true
- *         description: ID of the contact to delete.
+ *         description: ID of the hero to delete.
  *         schema:
  *           type: string
  *     responses:
  *       200:
- *         description: Contact deleted successfully.
+ *         description: hero deleted successfully.
  *       404:
- *         description: Contact not found or not deleted.
+ *         description: hero not found or not deleted.
  *       500:
- *         description: Failed to delete contact.
+ *         description: Failed to delete hero.
  */
-router.delete('/contacts/:id', processDeleteHero);
+router.delete('/heroes/:id', processDeleteHero);
 
 
 

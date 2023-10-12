@@ -59,12 +59,15 @@ async function getHeroesById(id) {
 
 
   async function updateHero(id, updatedHeroData) {
-    const {heroCollection} = await connectDB();
     try {
+      const collectionName = await connectDB(); 
+      if (!ObjectId.isValid(id)) {
+        return false;
+      }
       const objectId = new ObjectId(id);
-      const result = await heroCollection.updateOne(
-          {_id: objectId},
-          {$set: updatedHeroData},
+      const result = await collectionName.updateOne(
+        { _id: objectId },
+        { $set: updatedHeroData }
       );
   
       if (result.modifiedCount > 0) {
@@ -79,13 +82,14 @@ async function getHeroesById(id) {
       console.log('Disconnected from MongoDB');
     }
   }
+
   
   
   async function deleteHero(id) {
-    const {heroesCollection} = await connectDB();
     try {
+      const collectionName = await connectDB(); 
       const objectId = new ObjectId(id);
-      const result = await heroesCollection.deleteOne({_id: objectId});
+      const result = await collectionName.deleteOne({ _id: objectId });
   
       if (result.deletedCount > 0) {
         return true;
