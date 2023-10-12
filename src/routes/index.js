@@ -63,11 +63,12 @@ router.post('/heroes', processCreateHeroes);
 
 
 
+
 /**
  * @swagger
  * /heroes/{id}:
  *   put:
- *     summary: Update a hero.
+ *     summary: Update a hero by ID.
  *     parameters:
  *       - in: path
  *         name: id
@@ -77,19 +78,25 @@ router.post('/heroes', processCreateHeroes);
  *           type: string
  *       - in: body
  *         name: body
- *         description: hero data to update.
+ *         description: Updated hero data.
  *         required: true
  *         schema:
  *           $ref: '../models/models.js' 
  *     responses:
  *       204:
- *         description: hero updated successfully.
+ *         description: Hero updated successfully.
+ *       400:
+ *         description: Bad request. Invalid hero data.
  *       404:
- *         description: hero not found or not updated.
+ *         description: Hero not found.
  *       500:
  *         description: Failed to update hero.
  */
 router.put('/heroes/:id', processUpdateHero);
+
+
+
+
 
 /**
  * @swagger

@@ -57,23 +57,59 @@ const {
 
 
 
-  async function processUpdateHero(req, res) {
-    const {id} = req.params;
-    const updatedHeroData = req.body;
-  
-    try {
-      const HeroUpdated = await updateHero(id, updatedHeroData);
-  
-      if (HeroUpdated) {
-        res.status(204).json({message: 'Hero updated successfully.'});
-      } else {
-        res.status(404).json({error: 'Hero not found or not updated.'});
-      }
-    } catch (err) {
-      console.error('Error updating Hero:', err);
-      res.status(500).json({error: 'Failed to update Hero.'});
+const heroesModel = require('../models/models');
+
+async function processUpdateHero(req, res) {
+  const { id } = req.params;
+  const updatedHeroData = req.body;
+
+  try {
+    if (!id) {
+      res.status(400).json({ error: 'Hero ID is required.' });
+      return;
     }
+
+    if (!updatedHeroData) {
+      res.status(400).json({ error: 'Updated hero data is required.' });
+      return;
+    }
+
+    const hero = heroes.find((h) => h._id === id);
+
+    if (!hero) {
+      res.status(404).json({ error: 'Hero not found.' });
+      return;
+    }
+
+    if ('name' in updatedHeroData) {
+      hero.name = updatedHeroData.name;
+    }
+    if ('age' in updatedHeroData) {
+      hero.age = updatedHeroData.age;
+    }
+    if ('planet' in updatedHeroData) {
+      hero.planet = updatedHeroData.planet;
+    }
+    if ('gender' in updatedHeroData) {
+      hero.gender = updatedHeroData.gender;
+    }
+    if ('alien' in updatedHeroData) {
+      hero.alien = updatedHeroData.alien;
+    }
+    if ('tendency' in updatedHeroData) {
+      hero.tendency = updatedHeroData.tendency;
+    }
+    if ('editorial' in updatedHeroData) {
+      hero.editorial = updatedHeroData.editorial;
+    }
+
+    res.status(204).json({ message: 'Hero updated successfully.' });
+  } catch (err) {
+    console.error('Error updating hero:', err);
+    res.status(500).json({ error: 'Failed to update hero.' });
   }
+}
+
   
 
   
