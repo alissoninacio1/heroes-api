@@ -115,7 +115,7 @@ async function processUpdateHero(req, res) {
 
   
   
-  async function processDeleteHero(req, res) {
+async function processDeleteHero(req, res) {
     const {id} = req.params;
   
     try {
@@ -130,7 +130,7 @@ async function processUpdateHero(req, res) {
       console.error('Error deleting Hero:', err);
       res.status(500).json({error: 'Failed to delete contact.'});
     }
-  }
+}
   
 
 
