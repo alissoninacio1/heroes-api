@@ -6,7 +6,7 @@ const doc = {
     title: 'Heroes API',
     description: 'API for managing heroes',
   },
-  host: 'localhost:5000/heroes',
+  host: 'heroes-api-sjmr.onrender.com/heroes',
   basePath: '/',
 };
 

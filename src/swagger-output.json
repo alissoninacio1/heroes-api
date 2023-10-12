@@ -5,10 +5,10 @@
     "description": "API for managing heroes",
     "version": "1.0.0"
   },
-  "host": "localhost:5000",
+  "host": "heroes-api-sjmr.onrender.com/heroes",
   "basePath": "/",
   "schemes": [
-    "http"
+    "https"
   ],
   "paths": {
     "/heroes": {
