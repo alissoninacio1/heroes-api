@@ -1,3 +1,5 @@
+#---------------------LOCAL ---------------------------------
+
 # GET all heroes
 GET http://localhost:5000/heroes
 Accept: application/json
@@ -27,6 +29,7 @@ Content-Type: application/json
 # UPDATE a hero by ID
 PUT http://localhost:5000/heroes/65285dd6ae887706c9b769ac
 Content-Type: application/json
+
 {
   "name": "Fake Portuguese Iron Man"
 }
@@ -34,3 +37,46 @@ Content-Type: application/json
 ###
 # DELETE a hero by ID
 DELETE http://localhost:5000/heroes/65285dd6ae887706c9b769ac
+
+
+
+#---------------------------RENDER -----------------------
+
+###
+# GET all heroes
+GET https://heroes-api-sjmr.onrender.com/heroes
+Accept: application/json
+
+
+###
+# GET hero by ID
+GET https://heroes-api-sjmr.onrender.com/heroes/65262df251f5b366e9ced352
+Accept: application/json
+
+###
+# CREATE a new hero
+POST https://heroes-api-sjmr.onrender.com/heroes
+Content-Type: application/json
+
+{
+  "name": "Homem de Ferro",
+  "age": 40,
+  "planet": "Terra",
+  "gender": "Masculino",
+  "alien": false,
+  "tendency": "Bom",
+  "editorial": "Marvel"
+}
+
+###
+# UPDATE a hero by ID
+PUT https://heroes-api-sjmr.onrender.com/heroes/65285dd6ae887706c9b769ac
+Content-Type: application/json
+
+{
+  "name": "Fake Portuguese Iron Man"
+}
+
+###
+# DELETE a hero by ID
+DELETE https://heroes-api-sjmr.onrender.com/heroes/65285dd6ae887706c9b769ac
