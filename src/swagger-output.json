@@ -5,7 +5,7 @@
     "description": "API for managing heroes",
     "version": "1.0.0"
   },
-  "host": "localhost:5000/heroes",
+  "host": "localhost:5000",
   "basePath": "/",
   "schemes": [
     "http"
