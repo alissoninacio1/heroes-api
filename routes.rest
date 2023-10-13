@@ -50,7 +50,7 @@ Accept: application/json
 
 ###
 # GET hero by ID
-GET https://heroes-api-sjmr.onrender.com/heroes/65262df251f5b366e9ced352
+GET https://heroes-api-sjmr.onrender.com/heroes/6528b7d961b67c9dcfb832e2
 Accept: application/json
 
 ###
@@ -70,7 +70,7 @@ Content-Type: application/json
 
 ###
 # UPDATE a hero by ID
-PUT https://heroes-api-sjmr.onrender.com/heroes/65285dd6ae887706c9b769ac
+PUT https://heroes-api-sjmr.onrender.com/heroes/6528b7d961b67c9dcfb832e2
 Content-Type: application/json
 
 {
@@ -79,4 +79,4 @@ Content-Type: application/json
 
 ###
 # DELETE a hero by ID
-DELETE https://heroes-api-sjmr.onrender.com/heroes/65285dd6ae887706c9b769ac
+DELETE https://heroes-api-sjmr.onrender.com/heroes/6528b7d961b67c9dcfb832e2
