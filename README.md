@@ -2,12 +2,12 @@
 Heros API for CSE 341 Projects - BYU Idaho
 
 
-# access in
+## Access in
 https://heroes-api-sjmr.onrender.com/heroes
 
 https://heroes-api-sjmr.onrender.com/api-docs/
 
-# YouTube video in
+## YouTube video in
 https://youtu.be/sgrAg3qbxw0
 
 
