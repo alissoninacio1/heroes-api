@@ -39,6 +39,7 @@ passport.initCallbackRoute = (app) => {
     app.get('/auth/google/callback',
         passport.authenticate('google', { failureRedirect: '/login' }),
         function(req, res) {
+            console.log("user authenticated.")
             res.redirect('/profile'); 
         }
     );
